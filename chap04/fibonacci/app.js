@@ -7,7 +7,8 @@ const logger = require("morgan");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-const fibonacci = require("./routes/fibonacci");
+// const fibonacci = require('./routes/fibonacci');
+const fibonacci = require("./routes/fibonacci-async1");
 
 const app = express();
 
