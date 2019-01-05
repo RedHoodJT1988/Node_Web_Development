@@ -5,10 +5,13 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
-const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+
+const index = require("./routes/index");
 // const fibonacci = require('./routes/fibonacci');
-const fibonacci = require("./routes/fibonacci-async1");
+// const fibonacci = require('./routes/fibonacci-async1');
+// const fibonacci = require('./routes/fibonacci-await');
+const fibonacci = require("./routes/fibonacci-rest");
 
 const app = express();
 
@@ -23,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
+app.use("/", index);
 app.use("/users", usersRouter);
 app.use("/fibonacci", fibonacci);
 
